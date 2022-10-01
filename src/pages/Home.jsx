@@ -1,24 +1,38 @@
-import axios from 'axios'
-import React from 'react'
-import { useState, useEffect } from "react"
-
+import axios from "axios";
+import React from "react";
+import { useState, useEffect } from "react";
+import "./Home.css";
+import { Header } from "../components/Header";
+import { ContentBody } from "../components/ContentBody";
+import { Footer } from "../components/Footer";
 
 export const Home = () => {
-    const[url, setUrl] = useState("https://gateway.marvel.com/v1/public/comics?ts=1&apikey=9b90f55ec50911a5a29c699bb615267d&hash=d7780ab0c090b600530fc748a9f6bcf1")
-    const[item, setItem] = useState("")
-    useEffect(() => {
-       const fetch = async() => {
-           const res = await axios.get(url)
-           console.log(res.data.data.results);
-           setItem(res.data.data.results);
-       }
-       fetch();
-    },[url])
+  const APP_ID = "92c5cf35";
+  const [item, setItem] = useState([]);
+  const [ingredient, setIngredient] = useState("chicken")
 
-    
-    
-  return (<>
-    <div>Home</div>
-  </>
-  )
-}
+  const [vegan, isVegan] = useState(false)
+  const [cuisine, setCuisine] = useState("indian")
+
+  const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredient}&app_id=${APP_ID}${vegan == true? "&health=vegetarian": ""}&cuisineType=${cuisine}&random=true&app_key=191a23ec9d4667a1522d76aaa4d56596&diet=high-protein`;
+  
+  useEffect(() => {
+      const fetch = async () => {
+         const res = await axios.get(url);
+         console.log(res.data.hits);
+        setItem(res.data.hits);
+      }; 
+      fetch();
+  }, [url]);
+  
+ 
+  return (
+    <>
+      <div className="homepage">
+        <Header setingredient={setIngredient} isvegan={isVegan} setcuisine={setCuisine}/>
+        <ContentBody items={item} />
+        {/* <Footer />  */}
+      </div>
+    </>
+  );
+};
