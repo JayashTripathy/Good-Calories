@@ -8,8 +8,8 @@ select{
 .header-overlay{
     
     position: fixed;
-    top: 8vh;
-    right: 5vw;
+    top: 5vh;
+    right: 3vw;
     margin: auto;
     min-width: 20rem;
 }
@@ -18,12 +18,12 @@ select{
     display: flex;
     flex-direction: column;
     border-radius: 2.2rem;
-    background-color: #ffd500;
+    background-color: #000000;
     padding: .5rem;
    
 }
 .if-ingredient{
-    background-color: #18151c;
+    background-color: #1d1d1d;
     padding: 1rem 1.5rem;
     font-size: 1.2rem;
     
@@ -38,11 +38,11 @@ select{
 }
 
 .if-ingredient:focus{
-  background-color: black;
+    box-shadow: 0 2px 1px #ffe45e;
 }
 .if-ingredient:hover{
     
-    box-shadow: 0 10px 20px black;
+    box-shadow: 0 2px 1px #ffe45e;
 }
 
 
@@ -51,17 +51,17 @@ select{
     float: right;
     display: flex;
     justify-content: center;
-    color: #ffe45e;
-    min-width: 5rem;
+    color: black;
+    min-width: 7rem;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bolder;
     align-self: flex-end;
     cursor: pointer;
-
+    background-color: #ffe45e;
     border-radius: 2rem;
     padding: .5rem 1.5rem;
-
+    margin: 0 .5rem .5rem 0;
     transition: .5s;
     
 }
@@ -160,10 +160,6 @@ select{
     outline: none;
     font-size: 1.5rem;
     font-weight: bold;
-
-
-
-
 }
 .caloriesContent{
     display: flex;
@@ -171,6 +167,7 @@ select{
     justify-content: center;
     gap: .5rem;
     transition: .5s;
+    
 }
 
 
@@ -180,12 +177,17 @@ select{
     box-shadow: 0 10px 20px black;
 }
 
-.searchIcon{
-   position: absolute;
-    width: 20px;
-    height: 20px;
-    color: white;
-    background: none;
+.swiper{
+    background-color: rgb(46, 46, 46);
+   
 }
 
+.caloriesContent{
+    border-radius: 10rem;
+    padding-left: 1rem;
+}
+.recipeTitle{
+    padding: .5rem;
+    
+}
 
