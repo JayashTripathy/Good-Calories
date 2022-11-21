@@ -51,13 +51,13 @@ export const Home = () => {
             </div>
           </div>
         </div>
-
+       
         <Header
           setingredient={setIngredient}
           isvegan={isVegan}
           setcuisine={setCuisine}
         />
-        <ContentBody items={item} />
+        <ContentBody items={item} setItems={setItem} />
         {/* <Footer />  */}
       </div>
     </>

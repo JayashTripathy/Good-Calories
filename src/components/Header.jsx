@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import LogoAnimated from "./logo/LogoAnimated"
 
 import { useState } from "react";
 import { useEffect } from "react";
@@ -23,75 +24,78 @@ export const Header = ({ setingredient, isvegan, setcuisine }) => {
     }
   };
   return (
-    <div className="header-overlay">
-      <form
-        className="form-content"
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <input
-          className="if-ingredient"
-          type="text"
-          placeholder="Drop your MAGIC ingredient"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <div className="filterContent">
+    <>
+      <LogoAnimated/>
+      <div className="header-overlay">
+        <form
+          className="form-content"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <input
-            type="checkbox"
-            id="veg_checkbox"
-            className="checkbox"
-            onChange={() => SubmitDetails()}
+            className="if-ingredient"
+            type="text"
+            placeholder="Drop your MAGIC ingredient"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
+          <div className="filterContent">
+            <input
+              type="checkbox"
+              id="veg_checkbox"
+              className="checkbox"
+              onChange={() => SubmitDetails()}
+            />
 
-          <div className="caloriesContent">
-            <h2>Cusine</h2>
+            <div className="caloriesContent">
+              <h2>Cusine</h2>
 
-            {/* <input type="number" placeholder="Calories" /> */}
-            <select name="cusine" id="cusine">
-              <option
-                value="Indian"
-                onClick={() => {
-                  cuisineChange("Indian");
-                }}
-              >
-                Indian
-              </option>
-              <option
-                value="American"
-                onClick={() => {
-                  cuisineChange("American");
-                }}
-              >
-                American
-              </option>
-              <option
-                value="Italian"
-                onClick={() => {
-                  cuisineChange("Italian");
-                }}
-              >
-                Italian
-              </option>
-              <option
-                value="Japanese"
-                onClick={() => {
-                  cuisineChange("Japanese");
-                }}
-              >
-                Japanese
-              </option>
-            </select>
+              {/* <input type="number" placeholder="Calories" /> */}
+              <select name="cusine" id="cusine">
+                <option
+                  value="Indian"
+                  onClick={() => {
+                    cuisineChange("Indian");
+                  }}
+                >
+                  Indian
+                </option>
+                <option
+                  value="American"
+                  onClick={() => {
+                    cuisineChange("American");
+                  }}
+                >
+                  American
+                </option>
+                <option
+                  value="Italian"
+                  onClick={() => {
+                    cuisineChange("Italian");
+                  }}
+                >
+                  Italian
+                </option>
+                <option
+                  value="Japanese"
+                  onClick={() => {
+                    cuisineChange("Japanese");
+                  }}
+                >
+                  Japanese
+                </option>
+              </select>
+            </div>
           </div>
-        </div>
-        <input
-          type="submit"
-          value="Find"
-          className="if-submit"
-          onClick={SubmitDetails}
-        ></input>
-      </form>
-    </div>
+          <input
+            type="submit"
+            value="Find"
+            className="if-submit"
+            onClick={SubmitDetails}
+          ></input>
+        </form>
+      </div>
+    </>
   );
 };

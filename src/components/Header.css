@@ -6,11 +6,11 @@ select{
 }
 
 .header-overlay{
-    
+    margin: 0 3.5rem;
     position: fixed;
     top: 5vh;
     right: 3vw;
-    margin: auto;
+    
     min-width: 20rem;
 }
 
