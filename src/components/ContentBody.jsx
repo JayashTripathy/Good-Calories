@@ -52,7 +52,9 @@ export const ContentBody = ({ items, setItems }) => {
 
                     <div className="recipeTitle">
                       {item["recipe"]["label"].substr(0, 20)}
+                      
                     </div>
+                    <h5 className="calorieCount">1342 Calories</h5>
                     {/* <div className="calories">320kacl</div> */}
                     <div className="nutrition-content">
                       <div className="carbs">
@@ -66,17 +68,19 @@ export const ContentBody = ({ items, setItems }) => {
                       </div>
                     </div>
                     <div className="key-ingredients">
-                      <div>Key-ingredients</div>
+                      <h5>Key-ingredients</h5>
+                      
                       <div className="key-ingredients-list">
                         <div className="key-ingredient">tomato </div>
-                        <div className="key-ingredient">tomato </div>
-                        <div className="key-ingredient">tomato </div>
-                        <div className="key-ingredient">tomato </div>
-                        <div className="key-ingredient">tomato </div>
-                        <div className="key-ingredient">+6more</div>
+                        <div className="key-ingredient">potato </div>
+                        <div className="key-ingredient">cauliflower </div>
+                        <div className="key-ingredient">beans </div>
+                        <div className="key-ingredient">carrot </div>
+                        <div className="key-ingredient" id="more-elements">+6 more</div>
                         
                       </div>
                     </div>
+                    <button className="recipe-button">Full Recipe</button>
                   </div>
                 </SwiperSlide>
               );

@@ -112,7 +112,7 @@
  justify-content:center;
  align-items: center;
  flex-direction: column;
- padding: 0 1.5rem;
+ padding: .5rem 1.5rem;
  margin-top: .5rem;
 }
 
@@ -134,4 +134,50 @@
   padding: 0 .7rem;
   
   
+}
+
+#more-elements{
+  background-color: #004a20e0;
+  font-size: .8rem;
+ color: #00ff6e;
+}
+
+.calorieCount{
+  color:#0d0d0dae;        
+  text-align: center;
+  padding-bottom: .4rem;
+  padding-top: .2rem;
+  text-decoration-line: #ffe45e ;
+}
+
+.recipe-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92%;
+  padding: .5rem 0;
+  /* background-color:#000000ef ; */
+  background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+  color: white;
+  border-radius: 2rem;
+  margin: .8rem;
+  border: none;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-size: 300% 100%;
+  moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.recipe-button:hover{
+  background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }

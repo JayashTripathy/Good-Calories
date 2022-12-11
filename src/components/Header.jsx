@@ -49,9 +49,9 @@ export const Header = ({ setingredient, isvegan, setcuisine }) => {
             />
 
             <div className="caloriesContent">
-              <h2>Cusine</h2>
+              <h3>Cusine</h3>
 
-              {/* <input type="number" placeholder="Calories" /> */}
+             
               <select name="cusine" id="cusine">
                 <option
                   value="Indian"
