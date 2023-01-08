@@ -5,23 +5,28 @@ import LogoAnimated from "./logo/LogoAnimated"
 import { useState } from "react";
 import { useEffect } from "react";
 
-export const Header = ({ setingredient, isvegan, setcuisine }) => {
+export const Header = ({ setingredient, isvegan, setcuisine, setIsLoading }) => {
   let checkbox = document.querySelector("#veg_checkbox");
   const [query, setQuery] = useState("");
 
   const cuisineChange = (cuisine) => {
+    // setIsLoading(true)
     setcuisine(cuisine);
     SubmitDetails();
+    
   };
 
   const SubmitDetails = () => {
     if (checkbox.checked) {
+      setIsLoading(true)
       setingredient(query);
       isvegan(true);
     } else {
+      setIsLoading(true)
       setingredient(query);
       isvegan(false);
     }
+    
   };
   return (
     <>
@@ -52,7 +57,7 @@ export const Header = ({ setingredient, isvegan, setcuisine }) => {
               <h3>Cusine</h3>
 
              
-              <select name="cusine" id="cusine">
+              <select name="cusine" id="cusine" defaultValue = "American">
                 <option
                   value="Indian"
                   onClick={() => {
@@ -62,6 +67,7 @@ export const Header = ({ setingredient, isvegan, setcuisine }) => {
                   Indian
                 </option>
                 <option
+                  
                   value="American"
                   onClick={() => {
                     cuisineChange("American");
