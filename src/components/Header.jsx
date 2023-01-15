@@ -3,9 +3,9 @@ import "./Header.css";
 import LogoAnimated from "./logo/LogoAnimated"
 
 import { useState } from "react";
-import { useEffect } from "react";
 
-export const Header = ({ setingredient, isvegan, setcuisine, setIsLoading }) => {
+
+export const Header = ({ setingredient, isvegan, setcuisine, setIsLoading, setFirstSearch }) => {
   let checkbox = document.querySelector("#veg_checkbox");
   const [query, setQuery] = useState("");
 
@@ -26,7 +26,7 @@ export const Header = ({ setingredient, isvegan, setcuisine, setIsLoading }) => 
       setingredient(query);
       isvegan(false);
     }
-    
+    setFirstSearch(true);
   };
   return (
     <>

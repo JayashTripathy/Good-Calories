@@ -5,7 +5,7 @@ import "./Home.css";
 import { Header } from "../components/Header";
 import { ContentBody } from "../components/ContentBody";
 import PageNotFound from "../components/PageNotFound";
-import { Footer } from "../components/Footer";
+// import { Footer } from "../components/Footer";
 
 export const Home = () => {
   const APP_ID = "92c5cf35";
@@ -15,6 +15,8 @@ export const Home = () => {
   const [vegan, isVegan] = useState(false);
   const [cuisine, setCuisine] = useState("american");
   const [isLoading, setIsLoading] = useState(true);
+  const [firstSearch, setFirstSearch] = useState(false);
+  
 
   const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredient}&app_id=${APP_ID}${
     vegan === true ? "&health=vegetarian" : ""
@@ -31,8 +33,8 @@ export const Home = () => {
   }, [url]);
 
   const checkLength = () => {
-    if (item) {
-      if (item.length === 0 && isLoading === false) {
+    if (firstSearch) {
+      if (item.length === 0) {
         return (
           <div className="container-pnf">
             <PageNotFound />
@@ -40,7 +42,6 @@ export const Home = () => {
         );
       }
     }
-    
   };
   return (
     <>
@@ -50,6 +51,7 @@ export const Home = () => {
           setingredient={setIngredient}
           isvegan={isVegan}
           setcuisine={setCuisine}
+          setFirstSearch ={setFirstSearch}
         />
         {!isLoading ? (
           <>
@@ -57,9 +59,9 @@ export const Home = () => {
               <div className="track track-1">
                 <div className="track-inner">
                   <div className="plane-wrapper">
-                    <div className="plane">
+                    {/* <div className="plane">
                       <div className="plane-tail"></div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -67,9 +69,9 @@ export const Home = () => {
               <div className="track track-2">
                 <div className="track-inner">
                   <div className="plane-wrapper">
-                    <div className="plane">
+                    {/* <div className="plane">
                       <div className="plane-tail"></div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

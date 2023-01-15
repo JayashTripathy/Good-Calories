@@ -61,6 +61,7 @@
 
 .mySwiper {
   width: 100vw;
+  cursor: pointer;
 }
 
 .swiper-3d {
@@ -105,9 +106,9 @@
   font-weight: 700;
 }
 
-.key-ingredients{
-  color: rgba(0, 0, 0, 0.686);
-  margin: .2rem 0;
+.health-labels{
+  color: rgba(0, 0, 0, 0.986);
+  margin: .5rem .2rem;
  display: flex;
  justify-content:center;
  align-items: center;
@@ -116,10 +117,11 @@
  margin-top: .5rem;
 }
 
-.key-ingredients-list{
+.health-labels-list{
+  color: rgba(0, 0, 0, 0.686);
   font-size: .9rem;
   margin-top: .5rem;
-  padding: .2rem 0;
+  padding: .5rem .3rem;
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
@@ -127,7 +129,7 @@
   
   
 }
-.key-ingredient{
+.health-label{
   border-radius: 2rem;
   background-color: #ffffffc8;
   
@@ -136,11 +138,11 @@
   
 }
 
-#more-elements{
+/* #more-elements{
   background-color: #004a20e0;
   font-size: .8rem;
  color: #00ff6e;
-}
+} */
 
 .calorieCount{
   font-size: .8rem;
