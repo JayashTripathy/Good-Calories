@@ -1,15 +1,14 @@
 import React from "react";
 import "./RecipeContainer.css";
 import { UilTimes } from "@iconscout/react-unicons";
-import e from "express";
 
 const RecipeContainer = (currentData, setCurrentData) => {
   // setCloseBtn(`document.getElementById("#recipe-container")`)
   const handleClick = () => {
     document.getElementById("#recipe-container").style.visibility = "hidden";
   };
+  
 
- 
   return (
     <div className="recipe-container" id="#recipe-container">
       {currentData.currentData ? (
