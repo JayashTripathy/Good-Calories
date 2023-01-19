@@ -16,23 +16,11 @@ import { useState } from "react";
 export const ContentBody = ({ items, setItems, setIsLoading }) => {
   const bodyItems = useRef(null);
   const [currentData, setCurrentData] = useState(null);
- 
-  
 
-  // const handleFrClick = (itemImage) => {
-  //   if(currentData){  
-  //     return(
-  //       <RecipeContainer currentData ={currentData} setCurrentData={setCurrentData} />
-
-  //     )
-  //   }
-  // };
   const handleFrClick = (data) => {
-   
-    
-    setCurrentData(data)
-    document.getElementById("#recipe-container").style.visibility="visible"
-  }
+    setCurrentData(data);
+    document.getElementById("#recipe-container").style.visibility = "visible";
+  };
   return (
     <>
       <div className="recipeContent" ref={bodyItems}>
@@ -51,7 +39,11 @@ export const ContentBody = ({ items, setItems, setIsLoading }) => {
             modifier: 1,
             slideShadows: false,
           }}
-          mous
+          //media queries for small sceens
+
+          // height={100}
+          // width={100}
+          // cssMode= {true}
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
@@ -138,7 +130,7 @@ export const ContentBody = ({ items, setItems, setIsLoading }) => {
                         className="recipe-button"
                         onClick={() => handleFrClick(item)}
                       >
-                        Full Recipe
+                        See Ingredients
                       </button>
                     </div>
                   </SwiperSlide>
@@ -147,9 +139,100 @@ export const ContentBody = ({ items, setItems, setIsLoading }) => {
             })}
           </div>
         </Swiper>
-        <RecipeContainer currentData ={currentData} setCurrentData={setCurrentData} />
-
+        {/* <RecipeContainer currentData ={currentData} setCurrentData={setCurrentData} /> */}
       </div>
+      <div className="recipe-content-mobile" ref={bodyItems}>
+        <div className="itemsContainer">
+          {items.map((item, index) => {
+            return (
+              <>
+                <div className="recipeItem">
+                  <div className="image-container">
+                    <img
+                      src={item["recipe"]["image"]}
+                      alt=""
+                      className="recipeImg"
+                    />
+                  </div>
+
+                  <div className="recipeTitle">
+                    {item["recipe"]["label"].substr(0, 20)}
+                  </div>
+                  <p className="calorieCount">
+                    <span className="calorie-value">
+                      {" "}
+                      {Math.floor(item["recipe"]["calories"])}
+                    </span>{" "}
+                    Calories
+                  </p>
+                  {/* <div className="calories">320kacl</div> */}
+                  <div className="nutrition-content">
+                    <div className="carbs">
+                      Carbs -
+                      <span className="carb-values">
+                        {" "}
+                        &nbsp;
+                        {Math.floor(
+                          item["recipe"]["totalNutrients"]["CHOCDF"]["quantity"]
+                        )}
+                        g
+                      </span>
+                    </div>
+                    <div className="protien">
+                      Proteins -
+                      <span className="protien-values">
+                        {" "}
+                        &nbsp;
+                        {Math.floor(
+                          item["recipe"]["totalNutrients"]["PROCNT"]["quantity"]
+                        )}
+                        g
+                      </span>
+                    </div>
+                    <div className="fats">
+                      Fats -
+                      <span className="fats-values">
+                        {" "}
+                        &nbsp;
+                        {Math.floor(
+                          item["recipe"]["totalNutrients"]["FAT"]["quantity"]
+                        )}
+                        g
+                      </span>
+                    </div>
+                  </div>
+                  <div className="health-labels">
+                    {/* <h5>Health Labels</h5> */}
+
+                    <div className="health-labels-list">
+                      {item["recipe"]["dietLabels"].map((label, index) => {
+                        return (
+                          <div className="health-label" key={10 + index}>
+                            {label}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <button
+                    className="recipe-button"
+                    onClick={() => handleFrClick(item)}
+                  >
+                    See Ingredients
+                  </button>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+      <div className="recipe-modal-container">
+
+      <RecipeContainer
+        currentData={currentData}
+        setCurrentData={setCurrentData}
+        />
+        </div>
     </>
   );
 };

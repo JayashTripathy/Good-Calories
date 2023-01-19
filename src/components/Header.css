@@ -186,3 +186,19 @@ select{
 }
 
 
+@media only screen and (max-width: 730px){
+   
+    .header-overlay{
+        position: static;
+    }
+
+    .header-container{
+      
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        scale: 80%;
+    }
+    
+}

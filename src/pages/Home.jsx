@@ -23,11 +23,11 @@ export const Home = () => {
   }&cuisineType=${cuisine}&random=true&app_key=191a23ec9d4667a1522d76aaa4d56596&diet=high-protein`;
 
   useEffect(() => {
-    setIsLoading(false);
     const fetch = async () => {
       const res = await axios.get(url);
       console.log(res.data.hits);
       setItem(res.data.hits);
+      setIsLoading(false);
     };
     fetch();
   }, [url]);
@@ -36,7 +36,7 @@ export const Home = () => {
     if (firstSearch) {
       if (item.length === 0) {
         return (
-          <div className="container-pnf">
+          <div className="page-not-found">
             <PageNotFound />
           </div>
         );
@@ -46,6 +46,7 @@ export const Home = () => {
   return (
     <>
       <div className="homepage">
+        
         <Header
           setIsLoading={setIsLoading}
           setingredient={setIngredient}
