@@ -5,6 +5,7 @@
   align-items: flex-end;
   /* justify-content: center; */
   height: 100vh;
+  width: 100vw;
 }
 .itemsContainer {
   display: flex;
@@ -48,9 +49,7 @@
   border-radius: 1rem;
 }
 
-.swiper-3d{
-  padding-right: 7rem
-}
+
 .swiper-slide {
   width: 20%;
   filter: blur(3px);
@@ -61,6 +60,7 @@
 
 .mySwiper {
   width: 100vw;
+  cursor: pointer;
 }
 
 .swiper-3d {
@@ -105,21 +105,22 @@
   font-weight: 700;
 }
 
-.key-ingredients{
-  color: rgba(0, 0, 0, 0.686);
-  margin: .2rem 0;
+.health-labels{
+  color: rgba(0, 0, 0, 0.986);
+  margin: .5rem .2rem;
  display: flex;
  justify-content:center;
  align-items: center;
  flex-direction: column;
- padding: 0 1.5rem;
+ padding: .5rem 1.5rem;
  margin-top: .5rem;
 }
 
-.key-ingredients-list{
+.health-labels-list{
+  color: rgba(0, 0, 0, 0.686);
   font-size: .9rem;
   margin-top: .5rem;
-  padding: .2rem 0;
+  padding: .5rem .3rem;
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
@@ -127,11 +128,118 @@
   
   
 }
-.key-ingredient{
+.health-label{
   border-radius: 2rem;
   background-color: #ffffffc8;
   
   padding: 0 .7rem;
   
   
+}
+
+/* #more-elements{
+  background-color: #004a20e0;
+  font-size: .8rem;
+ color: #00ff6e;
+} */
+
+.calorieCount{
+  font-size: .8rem;
+  color:#0d0d0dae;        
+  text-align: center;
+  padding-bottom: .5rem;
+  padding-top: .3rem;
+  text-decoration-line: #ffe45e ;
+}
+
+.recipe-button{
+  display: flex;
+  gap: .3rem;
+  
+  align-items: center;
+  justify-content: center;
+  min-width: 92%;
+  padding: .4rem .8rem;
+  /* background-color:#000000ef ; */
+  background-image: linear-gradient(to right, #f5ce62, #e43603, #fad571, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+  color: white;
+  border-radius: 2rem;
+  margin: .8rem;
+  border: none;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-size: 300% 100%;
+  
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.swiper-slide-active .recipe-button:hover{
+  background-position: 100% 0;
+   
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.calorie-value{
+  font-weight: 900;
+ 
+}
+.recipe-content-mobile{
+  display: none;
+}
+
+
+@media only screen and (max-width: 730px){
+   
+  .recipeContent{
+    display: none;
+    height: 50vh;
+    padding-bottom: 0;
+    align-items: center;
+    
+  }
+  /* .swiper-3d{
+    perspective: 530px;
+  }
+  .mySwiper{
+    scale: 75%;
+    width: 150%;
+  }
+  .swiper-wrapper{
+    width: 120%;
+  }
+  .swiper-slide{
+    width: 9%;
+  } */
+
+  .recipe-content-mobile{
+    z-index: 1;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .itemsContainer{
+    flex-direction: column;
+    background-color: black;
+    border-radius:3rem;
+    align-items: center;
+    width: 22rem;
+  }
+  .recipe-modal-container{
+    
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+  }
 }
