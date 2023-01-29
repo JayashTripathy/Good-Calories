@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/High-On-Calories/static/css/main.fa7de37f.css",
+    "main.js": "/High-On-Calories/static/js/main.88274e1a.js",
+    "index.html": "/High-On-Calories/index.html",
+    "main.fa7de37f.css.map": "/High-On-Calories/static/css/main.fa7de37f.css.map",
+    "main.88274e1a.js.map": "/High-On-Calories/static/js/main.88274e1a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa7de37f.css",
+    "static/js/main.88274e1a.js"
+  ]
+}
