@@ -163,10 +163,24 @@
   justify-content: center;
 
 }
+.background-overlay{
+  display: none;
+}
 
 @media only screen and (max-width: 730px){
   .background{
    display: none;
+  }
+  .background-overlay{
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    
+    z-index: -1;
+    opacity: 15%;
+    mix-blend-mode: overlay;
+    object-fit: cover;
   }
   
   .page-not-found{

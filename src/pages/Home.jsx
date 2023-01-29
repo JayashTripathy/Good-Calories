@@ -45,6 +45,7 @@ export const Home = () => {
   };
   return (
     <>
+      <img src="background-overlay.jpg" alt="" className="background-overlay" />
       <div className="homepage">
         
         <Header

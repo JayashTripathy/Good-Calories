@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import "./RecipeContainer.css";
 import { UilTimes, UilArrowRight } from "@iconscout/react-unicons";
 
@@ -16,7 +16,7 @@ const RecipeContainer = (currentData, setCurrentData) => {
             <img
               className="fr-image-container"
               src={currentData.currentData.recipe.image}
-              alt="image"
+              alt="loading"
             />
             <div className="recipe-data-container">
               <div className="recipe-name">
@@ -43,7 +43,8 @@ const RecipeContainer = (currentData, setCurrentData) => {
             <a
               href={currentData.currentData.recipe.url}
               target="_blank"
-              className="recipe-link "
+              className="recipe-link"
+              without rel="noreferrer"
             >
               <button className="recipe-button ">
                 Full Recipe{" "}
