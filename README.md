@@ -1,1 +1,1 @@
-<img src="hoc.gif" alt="" />
+<img src="/hoc.gif" alt="" />
